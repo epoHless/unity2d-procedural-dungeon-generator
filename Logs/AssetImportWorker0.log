@@ -1035,3 +1035,140 @@ Received Import Request.
 Start importing Assets/Parameters/SimplerandomWalkParameters_.asset using Guid(d8771e3fa8125e04dbcfee1cef18ec81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58a79ec5242fceab3ea1c11ca80f409b') in 0.016449 seconds
   Import took 0.019501 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 919.994095 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b9cef16425e8a323370d2533b4bf83b') in 0.008943 seconds
+  Import took 0.012086 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.582480 seconds.
+  path: Assets/Scenes/DungeonScene.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/DungeonScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b023e8ad28343e83a163193847a10e74') in 0.008744 seconds
+  Import took 0.011758 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 56.346182 seconds.
+  path: Assets/Scripts/Dungeon/RoomDungeonGenerator.cs
+  artifactKey: Guid(a111d0ba24480fe4782bf88a68dcbd3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Dungeon/RoomDungeonGenerator.cs using Guid(a111d0ba24480fe4782bf88a68dcbd3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a7e44589fb3e1c41a1c14b76978d2d7') in 0.008005 seconds
+  Import took 0.011188 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.040935 seconds.
+  path: Assets/Editor/RandomDungeonGeneratorEditor.cs
+  artifactKey: Guid(75e716fc28125a845b3be397578cb352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor/RandomDungeonGeneratorEditor.cs using Guid(75e716fc28125a845b3be397578cb352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e070a281f9576a4d8324181c7bf5b09b') in 0.007717 seconds
+  Import took 0.011177 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.047232 seconds.
+  path: Assets/Inspector-Foldout-Group/Homebrew/DecorateFoldout
+  artifactKey: Guid(d2ea1807817cd8f489f0cd7f8db52c53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Inspector-Foldout-Group/Homebrew/DecorateFoldout using Guid(d2ea1807817cd8f489f0cd7f8db52c53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c891e17095b07b757694b97fcd828b34') in 0.008526 seconds
+  Import took 0.011363 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001676 seconds.
+  path: Assets/Inspector-Foldout-Group/Homebrew
+  artifactKey: Guid(93c43ae428745ea4999ade52a53b05f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Inspector-Foldout-Group/Homebrew using Guid(93c43ae428745ea4999ade52a53b05f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3095984fc7e7037e4316b59a19c71fec') in 0.008096 seconds
+  Import took 0.011063 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003668 seconds.
+  path: Assets/Inspector-Foldout-Group/Homebrew/DecorateFoldout/Editor/Resources
+  artifactKey: Guid(bed4d01e06e4a3942b6094d8418a3895) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Inspector-Foldout-Group/Homebrew/DecorateFoldout/Editor/Resources using Guid(bed4d01e06e4a3942b6094d8418a3895) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ad83068a6b4ff64740b5f1dd51a41d6') in 0.008630 seconds
+  Import took 0.012060 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003017 seconds.
+  path: Assets/Inspector-Foldout-Group/Homebrew/DecorateFoldout/Editor
+  artifactKey: Guid(ce5ff69fb5fc5de4b840a62a708f3781) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Inspector-Foldout-Group/Homebrew/DecorateFoldout/Editor using Guid(ce5ff69fb5fc5de4b840a62a708f3781) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fa9b9fde83ef8a42c6f4c9d9609dc2c') in 0.007628 seconds
+  Import took 0.010779 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.078477 seconds.
+  path: Assets/Inspector-Foldout-Group/README.md
+  artifactKey: Guid(8973c55bf3da300479a57fbc2a6d961f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Inspector-Foldout-Group/README.md using Guid(8973c55bf3da300479a57fbc2a6d961f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ecbee6f09ade293f2b4776bc99e3782') in 0.015198 seconds
+  Import took 0.019646 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006036 seconds.
+  path: Assets/Inspector-Foldout-Group/LICENSE
+  artifactKey: Guid(11e3a08ed9075144aabd044aaf47af77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Inspector-Foldout-Group/LICENSE using Guid(11e3a08ed9075144aabd044aaf47af77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64a3b9fd50ddcc180cabc04afb5f2bd2') in 0.014722 seconds
+  Import took 0.018985 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009858 seconds.
+  path: Assets/Inspector-Foldout-Group/Homebrew/DecorateFoldout/Editor/EditorOverride.cs
+  artifactKey: Guid(db36399e4dd6e304d9501d5edc1987f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Inspector-Foldout-Group/Homebrew/DecorateFoldout/Editor/EditorOverride.cs using Guid(db36399e4dd6e304d9501d5edc1987f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc35963666f20322ca999aaff1445b64') in 0.008136 seconds
+  Import took 0.011487 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.019051 seconds.
+  path: Assets/Inspector-Foldout-Group
+  artifactKey: Guid(966c0f2b0c6ef664fb677b9538f917f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Inspector-Foldout-Group using Guid(966c0f2b0c6ef664fb677b9538f917f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3af5894a2aaef594c3fcef26bd8a80b') in 0.008747 seconds
+  Import took 0.012556 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007269 seconds.
+  path: Assets/Scripts/Tilemaps/TilemapVisualizer.cs
+  artifactKey: Guid(25007f946671b974ba89615919f55198) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Tilemaps/TilemapVisualizer.cs using Guid(25007f946671b974ba89615919f55198) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee9f2b3738fdacbcf68961e6eb8a5de4') in 0.008041 seconds
+  Import took 0.011417 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.016600 seconds.
+  path: Assets/Inspector-Foldout-Group/Homebrew/DecorateFoldout/Attributes
+  artifactKey: Guid(8b2266ac10d4b1b4bb2830ba3d53fb72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Inspector-Foldout-Group/Homebrew/DecorateFoldout/Attributes using Guid(8b2266ac10d4b1b4bb2830ba3d53fb72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63273389b369c11715fca36600052ef9') in 0.008463 seconds
+  Import took 0.011815 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.026960 seconds.
+  path: Assets/Inspector-Foldout-Group/Homebrew/DecorateFoldout/Attributes/FoldAttribute.cs
+  artifactKey: Guid(dbe934e5168b6df4a87dc8029f0812d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Inspector-Foldout-Group/Homebrew/DecorateFoldout/Attributes/FoldAttribute.cs using Guid(dbe934e5168b6df4a87dc8029f0812d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73bf03d23107b42874070a823b4ea865') in 0.009173 seconds
+  Import took 0.012740 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.024656 seconds.
+  path: Assets/Editor
+  artifactKey: Guid(9b15a429b3c5bf74ca5e27afd5c10fd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor using Guid(9b15a429b3c5bf74ca5e27afd5c10fd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c459062fd8c122b92ac4a750b86f9e0d') in 0.002248 seconds
+  Import took 0.005926 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007936 seconds.
+  path: Assets/Scripts/Spawn System/SpawnObjectsOnTilemap.cs
+  artifactKey: Guid(ebd201c0cfe9e20448f874bdc0d5181d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Spawn System/SpawnObjectsOnTilemap.cs using Guid(ebd201c0cfe9e20448f874bdc0d5181d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c91807aac6d0daecb01feb0774d75d41') in 0.008621 seconds
+  Import took 0.012487 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
