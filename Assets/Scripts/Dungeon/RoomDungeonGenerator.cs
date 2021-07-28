@@ -1,5 +1,6 @@
 ﻿using Pixeye.Unity;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -45,8 +46,7 @@ public class RoomDungeonGenerator : SimpleDungeonGenerator
     {
         var roomsList = ProceduralGenerationAlgorithms.BinarySpacePartitioning(new BoundsInt((Vector3Int)startPosition, new Vector3Int(dungeonWidth, dungeonHeight, 0)), minRoomWidth, minRoomHeight);
 
-        HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
-
+        var floor = new HashSet<Vector2Int>();
 
         if (randomWalkRooms)
         {
@@ -57,13 +57,24 @@ public class RoomDungeonGenerator : SimpleDungeonGenerator
             floor = CreateSimpleRooms(roomsList);
         }
 
+        var roomCenters = roomsList.Select(room => (Vector2Int) Vector3Int.RoundToInt(room.center)).ToList();
 
-        List<Vector2Int> roomCenters = new List<Vector2Int>();
-        foreach (var room in roomsList)
-        {
-            roomCenters.Add((Vector2Int)Vector3Int.RoundToInt(room.center));
-        }
+        GenerateSpawnNEndPoints(roomCenters);
 
+        tilemapVisualizer.PaintFloorTilesRandomly(floor);
+        var corridors = ConnectRooms(roomCenters);
+        floor.UnionWith(corridors);
+        tilemapVisualizer.PaintCorridorTiles(corridors);
+
+        WallGenerator.CreateWalls(floor, tilemapVisualizer);
+    }
+
+    /// <summary>
+    /// Choose a random point to place the player and a second random point to place the endpoint
+    /// </summary>
+    /// <param name="roomCenters"></param>
+    public void GenerateSpawnNEndPoints(List<Vector2Int> roomCenters)
+    {
         var randomSpawnPoint = Random.Range(0, roomCenters.Count);
         player.transform.position = new Vector3Int(roomCenters[randomSpawnPoint].x, roomCenters[randomSpawnPoint].y, (int)transform.position.z);
 
@@ -78,18 +89,11 @@ public class RoomDungeonGenerator : SimpleDungeonGenerator
         }
 
         endPoint.transform.position = new Vector3Int(roomCenters[randomEndPoint].x, roomCenters[randomEndPoint].y, (int)transform.position.z);
-
-        tilemapVisualizer.PaintFloorTilesRandomly(floor);
-        HashSet<Vector2Int> corridors = ConnectRooms(roomCenters);
-        floor.UnionWith(corridors);
-        tilemapVisualizer.PaintCorridorTiles(corridors);
-
-        WallGenerator.CreateWalls(floor, tilemapVisualizer);
     }
 
     private HashSet<Vector2Int> CreateRoomsRandomly(List<BoundsInt> roomsList)
     {
-        HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
+        var floor = new HashSet<Vector2Int>();
 
         for (int i = 0; i < roomsList.Count; i++)
         {
@@ -109,7 +113,7 @@ public class RoomDungeonGenerator : SimpleDungeonGenerator
 
     private HashSet<Vector2Int> ConnectRooms(List<Vector2Int> roomCenters)
     {
-        HashSet<Vector2Int> corridors = new HashSet<Vector2Int>();
+        var corridors = new HashSet<Vector2Int>();
         var currentRoomCenter = roomCenters[Random.Range(0, roomCenters.Count)];
         roomCenters.Remove(currentRoomCenter);
 
@@ -126,7 +130,7 @@ public class RoomDungeonGenerator : SimpleDungeonGenerator
 
     private HashSet<Vector2Int> CreateCorridor(Vector2Int currentRoomCenter, Vector2Int destination)
     {
-        HashSet<Vector2Int> corridor = new HashSet<Vector2Int>();
+        var corridor = new HashSet<Vector2Int>();
         var position = currentRoomCenter;
         corridor.Add(position);
         while (position.y != destination.y)
@@ -158,7 +162,7 @@ public class RoomDungeonGenerator : SimpleDungeonGenerator
 
     private Vector2Int FindClosestPointTo(Vector2Int currentRoomCenter, List<Vector2Int> roomCenters)
     {
-        Vector2Int closest = Vector2Int.zero;
+        var closest = Vector2Int.zero;
         float distance = float.MaxValue;
         foreach (var position in roomCenters)
         {
@@ -174,7 +178,7 @@ public class RoomDungeonGenerator : SimpleDungeonGenerator
 
     private HashSet<Vector2Int> CreateSimpleRooms(List<BoundsInt> roomsList)
     {
-        HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
+        var floor = new HashSet<Vector2Int>();
         foreach (var room in roomsList)
         {
             for (int col = offset; col < room.size.x - offset; col++)
