@@ -1,7 +1,9 @@
-﻿using Pixeye.Unity;
+﻿using System;
+using Pixeye.Unity;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 public class RoomDungeonGenerator : SimpleDungeonGenerator
@@ -14,15 +16,28 @@ public class RoomDungeonGenerator : SimpleDungeonGenerator
     [SerializeField] int dungeonHeight = 20;
     [SerializeField] [Range(0, 10)] int offset = 1;
     [SerializeField] bool randomWalkRooms = false;
-
+    [SerializeField] private int maxFloors = 3;
+    [SerializeField] private int currentFloor = 0;
 
     [Foldout("Spawn Point and End Point", true)]
     [SerializeField] GameObject player;
     [SerializeField] GameObject endPoint;
 
+    [Space]
+    [Header("Dungeon Events")]
+    [field: SerializeField] private UnityEvent onDungeonCreate;
+    [field: SerializeField] private UnityEvent onEndPointReach;
+    [field: SerializeField] private UnityEvent onDungeonEnd;
+
     SpawnObjectsOnTilemap spawnSystem;
 
     public static RoomDungeonGenerator instance;
+
+    private void Awake()
+    {
+        instance = this;
+        spawnSystem = GetComponent<SpawnObjectsOnTilemap>();
+    }
 
     protected override void RunProceduralGeneration()
     {
@@ -34,16 +49,19 @@ public class RoomDungeonGenerator : SimpleDungeonGenerator
 
     private void Start()
     {
-        instance = this;
-
         tilemapVisualizer.Clear();
         CreateRooms();
-
-        spawnSystem = GetComponent<SpawnObjectsOnTilemap>();
     }
 
     public void CreateRooms()
     {
+        currentFloor++;
+        if (currentFloor == maxFloors)
+        {
+            onDungeonEnd?.Invoke();
+            Debug.Log("Dungeon Completed");
+        }
+        
         var roomsList = ProceduralGenerationAlgorithms.BinarySpacePartitioning(new BoundsInt((Vector3Int)startPosition, new Vector3Int(dungeonWidth, dungeonHeight, 0)), minRoomWidth, minRoomHeight);
 
         var floor = new HashSet<Vector2Int>();
@@ -67,6 +85,8 @@ public class RoomDungeonGenerator : SimpleDungeonGenerator
         tilemapVisualizer.PaintCorridorTiles(corridors);
 
         WallGenerator.CreateWalls(floor, tilemapVisualizer);
+        
+        onDungeonCreate?.Invoke();
     }
 
     /// <summary>
@@ -192,4 +212,28 @@ public class RoomDungeonGenerator : SimpleDungeonGenerator
         }
         return floor;
     }
+
+    public void ResetTiles()
+    {
+        tilemapVisualizer.Clear();
+    }
+
+    #region Event Functions
+
+    public void InvokeOnEndPointReachEvent()
+    {
+        onEndPointReach?.Invoke();
+    }
+    
+    public void InvokeOnDungeonCreateEvent()
+    {
+        onDungeonCreate?.Invoke();
+    }
+    
+    public void InvokeOnDungeonCreateEnd()
+    {
+        onDungeonEnd?.Invoke();
+    }
+
+    #endregion
 }

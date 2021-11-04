@@ -26,6 +26,8 @@ public class SpawnObjectsOnTilemap : MonoBehaviour
 
     private int nOfEnemiesToSpawn;
 
+    private List<GameObject> currentEnemiesOnFloor = new List<GameObject>();
+
     private void Start()
     {
         FindLocationsOfTilesToSpawnEnemies();
@@ -45,7 +47,7 @@ public class SpawnObjectsOnTilemap : MonoBehaviour
             }
             else
             {
-                Debug.Log("Time has run out!");
+                // Debug.Log("Time has run out!");
 
                 if (totalEnemiesActive <= maxEnemyCount) SpawnEnemy();
 
@@ -87,7 +89,7 @@ public class SpawnObjectsOnTilemap : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("No tile at place");
+                    // Debug.Log("No tile at place");
                 }
             }
         }
@@ -108,7 +110,18 @@ public class SpawnObjectsOnTilemap : MonoBehaviour
         }
         for (int i = 0; i < enemySpawnPosition.Count; i++)
         {
-            Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)], new Vector3(enemySpawnPosition[i].x + 0.5f, enemySpawnPosition[i].y + 0.5f, enemySpawnPosition[i].z), Quaternion.identity);
+           var newEnemy = Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)], new Vector3(enemySpawnPosition[i].x + 0.5f, enemySpawnPosition[i].y + 0.5f, enemySpawnPosition[i].z), Quaternion.identity);
+           currentEnemiesOnFloor.Add(newEnemy);
         }
+    }
+
+    public void DestroyAllEnemies()
+    {
+        foreach (var enemy in currentEnemiesOnFloor)
+        {
+            Destroy(enemy);
+        }
+        
+        FindLocationsOfTilesToSpawnEnemies();
     }
 }
