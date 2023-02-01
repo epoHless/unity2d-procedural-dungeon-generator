@@ -6,6 +6,7 @@ using Pixeye.Unity;
 
 public abstract class AbstractDungeonGenerator : MonoBehaviour
 {
+    [Foldout("Tiles Settings", true)]
     [SerializeField] protected TilemapVisualizer tilemapVisualizer = null;
     [SerializeField] protected Vector2Int startPosition = Vector2Int.zero;
 

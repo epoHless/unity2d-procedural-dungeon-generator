@@ -23,10 +23,9 @@ public class RoomDungeonGenerator : SimpleDungeonGenerator
     [SerializeField] GameObject player;
     [SerializeField] GameObject endPoint;
 
-    [Space]
-    [Header("Dungeon Events")]
+    [Foldout("Dungeon Events", true)]
     [field: SerializeField] private UnityEvent onDungeonCreate;
-    [field: SerializeField] private UnityEvent onEndPointReach;
+    [field: SerializeField] private UnityEvent onReachStairs;
     [field: SerializeField] private UnityEvent onDungeonEnd;
 
     SpawnObjectsOnTilemap spawnSystem;
@@ -218,11 +217,28 @@ public class RoomDungeonGenerator : SimpleDungeonGenerator
         tilemapVisualizer.Clear();
     }
 
+    public int CurrentFloor()
+    {
+        return currentFloor;
+    }
+
+    public int MaxFloor()
+    {
+        return maxFloors;
+    }
+
     #region Event Functions
 
     public void InvokeOnEndPointReachEvent()
     {
-        onEndPointReach?.Invoke();
+        if (currentFloor <= maxFloors)
+        {
+            onReachStairs?.Invoke();
+        }
+        else
+        {
+            onDungeonEnd?.Invoke();
+        }
     }
     
     public void InvokeOnDungeonCreateEvent()
